@@ -9,14 +9,23 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSMicrophoneUsageDescription": "Speak to log expenses hands-free",
+        "NSSpeechRecognitionUsageDescription": "Convert your speech into expense entries"
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#000"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "permissions": [
+        "RECORD_AUDIO",
+        "RECEIVE_SMS",
+        "READ_SMS"
+      ]
     },
     "web": {
       "bundler": "metro",
@@ -34,7 +43,9 @@
           "backgroundColor": "#000"
         }
       ],
-      "expo-font"
+      "expo-font",
+      "@react-native-community/datetimepicker",
+      "expo-speech-recognition"
     ],
     "experiments": {
       "typedRoutes": true
