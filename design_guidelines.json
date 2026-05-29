@@ -1,0 +1,246 @@
+{
+  "app": {
+    "name": "Flow",
+    "description": "Offline-first personal expense tracker for Indian users",
+    "type": "React Native Expo Mobile App"
+  },
+  "design_philosophy": {
+    "theme": "Organic & Earthy / Soft Utility",
+    "vibe": "Warm, minimal, calm, and frictionless.",
+    "rationale": "Financial tracking should feel natural, not stressful. The warm cream background reduces clinical harshness, while the indigo accent provides focus. Focus is placed on Indian UI paradigms (₹, comma formatting)."
+  },
+  "currency": {
+    "symbol": "₹",
+    "locale": "en-IN",
+    "format": "Indian Numbering System (e.g., ₹ 1,50,000.00)"
+  },
+  "color_tokens": {
+    "light": {
+      "background": "#FDFBF7",
+      "surface": "#FFFFFF",
+      "surface_elevated": "#F8F6F1",
+      "primary": "#4F46E5",
+      "primary_active": "#4338CA",
+      "primary_light": "#EEF2FF",
+      "text_primary": "#1C1917",
+      "text_secondary": "#57534E",
+      "border": "#E7E5E4",
+      "expense": "#DC2626",
+      "expense_light": "#FEF2F2",
+      "income": "#059669",
+      "income_light": "#ECFDF5",
+      "wallet_load": "#0284C7"
+    },
+    "dark": {
+      "background": "#0F0F11",
+      "surface": "#1C1C1E",
+      "surface_elevated": "#2C2C2E",
+      "primary": "#6366F1",
+      "primary_active": "#818CF8",
+      "primary_light": "#3730A3",
+      "text_primary": "#F5F5F4",
+      "text_secondary": "#A8A29E",
+      "border": "#292524",
+      "expense": "#F87171",
+      "expense_light": "#7F1D1D",
+      "income": "#34D399",
+      "income_light": "#064E3B",
+      "wallet_load": "#38BDF8"
+    }
+  },
+  "typography": {
+    "font_family": "System",
+    "scales": {
+      "h1": {
+        "size": "32px",
+        "weight": "700",
+        "line_height": "40px",
+        "tracking": "-0.5px"
+      },
+      "h2": {
+        "size": "24px",
+        "weight": "700",
+        "line_height": "32px",
+        "tracking": "-0.3px"
+      },
+      "h3": {
+        "size": "20px",
+        "weight": "600",
+        "line_height": "28px",
+        "tracking": "0px"
+      },
+      "body_large": {
+        "size": "18px",
+        "weight": "400",
+        "line_height": "26px",
+        "tracking": "0px"
+      },
+      "body": {
+        "size": "16px",
+        "weight": "400",
+        "line_height": "24px",
+        "tracking": "0px"
+      },
+      "body_medium": {
+        "size": "16px",
+        "weight": "500",
+        "line_height": "24px",
+        "tracking": "0px"
+      },
+      "caption": {
+        "size": "14px",
+        "weight": "400",
+        "line_height": "20px",
+        "tracking": "0px"
+      },
+      "tiny": {
+        "size": "12px",
+        "weight": "500",
+        "line_height": "16px",
+        "tracking": "0.2px",
+        "text_transform": "uppercase"
+      }
+    }
+  },
+  "spacing": {
+    "xs": "4px",
+    "sm": "8px",
+    "md": "16px",
+    "lg": "24px",
+    "xl": "32px",
+    "2xl": "48px"
+  },
+  "components": {
+    "cards": {
+      "border_radius": "20px",
+      "padding": "16px",
+      "light_style": "background: surface, shadow: 0 4px 20px rgba(0,0,0,0.03), border: none",
+      "dark_style": "background: surface, shadow: none, border: 1px solid border"
+    },
+    "buttons": {
+      "primary": {
+        "border_radius": "16px",
+        "padding": "16px 24px",
+        "background": "primary",
+        "text_color": "white",
+        "font_weight": "600",
+        "align": "center"
+      },
+      "voice_fab": {
+        "shape": "circle",
+        "size": "56px",
+        "background": "primary",
+        "icon_color": "white",
+        "shadow": "0 8px 24px rgba(79, 70, 229, 0.3)"
+      }
+    },
+    "inputs": {
+      "natural_language": {
+        "font_size": "32px",
+        "font_weight": "600",
+        "border": "none",
+        "background": "transparent",
+        "placeholder_color": "text_secondary"
+      },
+      "standard": {
+        "border_radius": "12px",
+        "border": "1px solid border",
+        "padding": "16px",
+        "background": "surface",
+        "focus_border": "primary"
+      }
+    },
+    "chips": {
+      "border_radius": "24px",
+      "padding": "8px 16px",
+      "active": {
+        "background": "primary",
+        "text": "white"
+      },
+      "inactive": {
+        "background": "surface_elevated",
+        "text": "text_secondary",
+        "border": "1px solid border"
+      }
+    },
+    "tab_bar": {
+      "background": "surface",
+      "active_tint": "primary",
+      "inactive_tint": "text_secondary",
+      "border_top": "1px solid border",
+      "padding_bottom": "safe_area_inset"
+    },
+    "charts": {
+      "bar_chart": "Rounded top corners for bars (radius 4px). Use Primary for main, soft Indigo for secondary.",
+      "donut_chart": "Use semantic palette (Primary, wallet_load, success, expense) mixed with varying opacities of Primary for different categories. 24px stroke width."
+    }
+  },
+  "icons": {
+    "library": "@expo/vector-icons/Feather",
+    "fallback": "@expo/vector-icons/Ionicons",
+    "rules": "Stroke width 2px. Size 24px for primary actions, 20px for inline."
+  },
+  "screens": {
+    "dashboard": {
+      "layout_flow": [
+        "Header: Greeting + Profile icon or Settings gear (data-testid='settings-btn')",
+        "Hero Card: Total Spent this month (Large typography, primary background gradient, white text) (data-testid='total-spent-card')",
+        "Quick Stats: Horizontal scroll or 2-col grid (Daily Average, Top Category)",
+        "Bar Chart: Top 3 categories overview",
+        "Split View: SMS vs Manual entry percentage (visual bar)",
+        "Recent Transactions: Short list (top 3) with 'View All' link"
+      ]
+    },
+    "add_expense_quick_add": {
+      "layout_flow": [
+        "Header: 'Add Expense'",
+        "Input Area: Massive text field for Natural Language ('120 chai and samosa'). (data-testid='nl-input')",
+        "Voice Input: Floating action button near the input (data-testid='voice-input-btn')",
+        "Predictions: Predicted category chip (tappable to change). (data-testid='category-chip')",
+        "Payment Method: Horizontal scroll of chips (Cash, Bank, UPI Lite, Paytm Wallet). (data-testid='payment-method-scroll')",
+        "Optional: 'Why' note standard input.",
+        "Footer: Sticky 'Save' button. (data-testid='save-expense-btn')"
+      ]
+    },
+    "wallets": {
+      "layout_flow": [
+        "Header: 'Wallets & UPI Lite'",
+        "List of Loads: Cards showing 'Load Amount' vs 'Spent'.",
+        "Card Details: Progress bar (Allocated vs Remaining).",
+        "Nested Items: Tapping a card expands to show linked expenses."
+      ]
+    },
+    "reports": {
+      "layout_flow": [
+        "Tabs: Monthly | Yearly | Custom (Sticky top) (data-testid='report-tabs')",
+        "Visual: Donut chart for category breakdown (amount & %).",
+        "Data: Transaction list grouped by date.",
+        "Action: 'Export to CSV' button fixed at bottom or top right. (data-testid='export-csv-btn')"
+      ]
+    },
+    "sms_review": {
+      "layout_flow": [
+        "Header: 'Pending SMS Logs'",
+        "List: Cards of parsed SMS (Amount, Merchant, Date).",
+        "Actions: Each card has 'Confirm' (Primary) and 'Edit' (Secondary) buttons. (data-testid='confirm-sms-btn')"
+      ]
+    },
+    "settings": {
+      "layout_flow": [
+        "Header: 'Settings'",
+        "Toggles: Dark Mode toggle. (data-testid='dark-mode-toggle')",
+        "Data: Export/Import local data (offline-first focus)."
+      ]
+    }
+  },
+  "testing": {
+    "rules": "All interactive and key informational elements MUST include a 'data-testid' attribute in kebab-case. Buttons, links, form inputs, menus, error messages, user balances, and confirmation text.",
+    "examples": [
+      "data-testid='dashboard-tab'",
+      "data-testid='add-expense-tab'",
+      "data-testid='wallets-tab'",
+      "data-testid='reports-tab'",
+      "data-testid='save-btn'"
+    ]
+  }
+}
